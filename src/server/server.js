@@ -1,6 +1,8 @@
 // Setup empty JS object to act as endpoint for all routes
 const projectData = {};
 
+var path = require('path')
+
 // Require Express to run server and routes
 const express = require('express');
 
@@ -20,7 +22,7 @@ const cors = require('cors');
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('./src/client'));
+app.use(express.static('dist'));
 
 
 // Setup Server
@@ -32,3 +34,7 @@ function listening() {
     console.log('server is running');
     console.log(`running on localhost: ${port}`);
 }
+
+app.get('/', function(req, res) {
+    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
+})
