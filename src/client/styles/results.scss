@@ -1,0 +1,62 @@
+img {
+    max-width: 50vw;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#entry-holder {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-margin {
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+h3 {
+    font-size: 13px;
+}
+
+p {
+    font-size: 10px;
+}
+
+.title {
+    text-decoration: underline;
+}
+
+#entry {
+    text-align: center;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    img {
+        max-width: 50vw;
+        height: 400px;
+        margin: 0;
+    }
+    #entry-holder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .add-margin {
+        margin-top: 0;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 18px;
+    }
+}
