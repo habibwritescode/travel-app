@@ -1,10 +1,18 @@
-import { mainFunc } from './js/app.js'
+// Import main Js Funtion
+import { mainFunction } from './js/app';
 
-import './styles/style.scss'
+import './styles/mainStyle.scss';
+import './styles/results.scss';
+import './styles/footer.scss';
+import './styles/form.scss';
 
-console.log(mainFunc)
+import './media/background.jpg'
+import './media/placeholder.jpg'
+
 alert("I EXIST")
 
 export {
-    mainFunc
+    mainFunction
 }
+
+window.addEventListener("DOMContentLoaded", mainFunction);
