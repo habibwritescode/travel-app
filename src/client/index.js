@@ -6,10 +6,7 @@ import './styles/results.scss';
 import './styles/footer.scss';
 import './styles/form.scss';
 
-import './media/background.jpg'
 import './media/placeholder.jpg'
-
-alert("I EXIST")
 
 export {
     mainFunction
