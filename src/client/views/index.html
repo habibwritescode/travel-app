@@ -40,8 +40,16 @@
     <footer id="footer">
         <p class="center">Built by Habib Afo &copy;April 2020 for Udacity Frontend Nanodegree</p>
     </footer>
-    <script src="../js/app.js " type="text/javascript "></script>
 
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 
 </html>
