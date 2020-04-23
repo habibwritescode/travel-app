@@ -1,20 +1,18 @@
-/* Global Variables */
+import { dataFromApi } from './apiData';
+import { getFormDetails } from './formValidation';
+import { updateUI } from './updateUI';
 
-// Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+export const mainFunction = function() {
 
-const mainFunc = function() {
+    const submitButton = document.getElementById('generate');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
 
+        const tripDetails = getFormDetails();
 
-    const submitBtn = document.getElementById('generate');
-    submitBtn.addEventListener('click', performAction);
-    /* Function called by event listener */
-    function performAction(evt) {
-        evt.preventDefault();
-    }
+        dataFromApi(tripDetails)
+            .then(data => {
+                updateUI(data);
+            })
+    })
 }
-
-
-
-export { mainFunc }
