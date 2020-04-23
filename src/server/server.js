@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const requestHandler = require('./requestHandler');
+const makeRequest = require('./makeRequest');
 
 
 // Start up an instance of app
@@ -35,7 +35,7 @@ function listening() {
 }
 
 
-app.post('/getCoordinates', requestHandler.getCoordinates);
-app.post('/getWeather', requestHandler.getWeather)
-app.post('/getImage', requestHandler.getImage)
-app.post('/getCountryDetail', requestHandler.getCountryDetail)
+app.post('/getCoordinates', makeRequest.getCoordinates);
+app.post('/getWeather', makeRequest.getWeather)
+app.post('/getImage', makeRequest.getImage)
+app.post('/getCountryDetail', makeRequest.getCountryDetail)
