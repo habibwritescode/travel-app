@@ -1,33 +1,32 @@
-// Setup empty JS object to act as endpoint for all routes
-const projectData = {};
-
-var path = require('path')
-
-// Require Express to run server and routes
+const dotenv = require('dotenv');
+dotenv.config();
+const path = require('path')
 const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const requestHandler = require('./requestHandler');
+
 
 // Start up an instance of app
 const app = express();
 
-/*Dependencies*/
-const bodyParser = require('body-parser');
+// Cors for cross origin allowance
+app.use(cors());
 
-/* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Cors for cross origin allowance
-const cors = require('cors');
-app.use(cors());
-
 // Initialize the main project folder
 app.use(express.static('dist'));
 
+app.get('/', function(req, res) {
+    res.sendFile(path.resolve('dist/index.html'))
+})
 
 // Setup Server
 const port = 3000;
-
 const server = app.listen(port, listening);
 // Callback to debug
 function listening() {
@@ -35,6 +34,8 @@ function listening() {
     console.log(`running on localhost: ${port}`);
 }
 
-app.get('/', function(req, res) {
-    res.sendFile('dist/index.html')
-})
+
+app.post('/getCoordinates', requestHandler.getCoordinates);
+app.post('/getWeather', requestHandler.getWeather)
+app.post('/getImage', requestHandler.getImage)
+app.post('/getCountryDetail', requestHandler.getCountryDetail)
