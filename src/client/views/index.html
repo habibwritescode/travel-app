@@ -14,16 +14,19 @@
     </header>
 
     <main id="app">
+
         <section>
             <form class="" action="">
                 <label for="destination">Enter destination</label>
                 <input type="text" name="destination" id="destination" placeholder="enter destination" required>
                 <br>
                 <label for="departure-date">Enter departure date</label>
-                <input type="date" name="departure-date" id="departure-date" required>
+                <!-- Added placeholder for browsers that do not support type="date" -->
+                <input type="date" name="departure-date" id="departure-date" placeholder="YYYY-MM-DD" required>
                 <br>
                 <label for="arrival-date">Enter arrival date</label>
-                <input type="date" name="arrival-date" id="arrival-date" required>
+                <!-- Added placeholder for browsers that do not support type="date" -->
+                <input type="date" name="arrival-date" id="arrival-date" placeholder="YYYY-MM-DD" required>
                 <br>
                 <button id="generate" type="submit">Generate</button>
             </form>
