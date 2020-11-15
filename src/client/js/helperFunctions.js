@@ -36,3 +36,10 @@ export const formatDate = function(date) {
     const formatedDate = moment(date).format('LL');
     return formatedDate
 }
+
+// scroll Results into view
+export const scrollResults = function() {
+        document.querySelector('#entry').scrollIntoView({
+            behavior: 'smooth'
+        });
+}

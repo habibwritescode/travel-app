@@ -1,4 +1,4 @@
-import { capitalCase } from "./helperFunctions";
+import { capitalCase, scrollResults } from "./helperFunctions";
 
 export const updateUI = function(tripObject) {
     const resultSection = document.getElementById('entry');
@@ -22,5 +22,6 @@ export const updateUI = function(tripObject) {
       <p>Population: ${tripObject.population}</p>
         </div>
     `
+    scrollResults()
     resultSection.appendChild(tripDetails);
 }
