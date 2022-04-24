@@ -49,6 +49,6 @@
         "workbox-webpack-plugin": "^5.1.2"
     },
     "engines": {
-        "node": "12.16.1"
+        "node": "12.22.12"
     }
 }
